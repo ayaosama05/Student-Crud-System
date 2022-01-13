@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="shortcut icon" href="./Images/logo.ico">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./Plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Student System</title>
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper mt-5">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Manage <b>Students</b></h2>
+          </div>
+          <div class="col-sm-6 d-flex justify-content-end">
+            <span class="text-success" id="CorrectIcon" style="font-size: 30px;display: none;"><i class="fas fa-check-circle"></i></span>
+            <span class="text-danger" id="WrongIcon" style="font-size: 30px;display: none;"><i class="fas fa-times-circle"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="StuList">
+        <div class="col-12 col-md-10 w-100">
+            <div class="card">
+                <div class="card-body">
+                    <form onsubmit="event.preventDefault();" id="myForm" autocomplete="off">
+                    <div class="mb-3 row">
+                        <label for="inputName" class="col-sm-2 col-form-label">Full Name
+                          <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputName" required>
+                          <div class="alert alert-danger mt-2 d-none Input-alert w-100"></div>
+                        </div>
+                      </div>
+                      <div class="mb-3 row">
+                        <label for="inputAge" class="col-sm-2 col-form-label">Age
+                          <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                          <input type="number" 
+                          min="5" max="25"
+                          class="form-control" id="inputAge" required>
+                          <div class="alert alert-danger mt-2 d-none Input-alert w-100">Age should be between 5 - 25 years</div>
+                      </div>
+                    </div>
+                      <div class="mb-3 row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Email
+                          <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail" required>
+                          <div class="alert alert-danger mt-2 d-none Input-alert w-100">E-mail format is incorrect !</div>
+                      </div>
+                    </div>
+                      <div class="mb-3 row">
+                        <label for="inputClass" class="col-sm-2 col-form-label">Class
+                          <span style="color:red">*</span>
+                        </label>
+                        <div class="col-sm-10">
+                            <select required class="form-select" aria-label="Default select example" id="inputClass">
+                                <option selected value="">-- Please Choose the Student Class --</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                              </select>
+                              <div class="alert alert-danger mt-2 d-none Input-alert w-100">You must select student class</div>
+                      </div>
+                    </div>
+                      </div>
+                      <div class="row" id="UpdateBlock" style="display: none;">
+                       <div class="col-6">
+                        <input id="UpdateBtn" class="btn btn-warning rounded-0 w-100" value="Update Student">
+                       </div>
+                       <div class="col-6">
+                        <input onclick="onFormCancel();" class="btn btn-danger rounded-0 w-100" value="Cancel">
+                       </div>
+                      </div>
+                      <input 
+                      id="AddBtn"
+                      onclick="onFormAdd();" type="submit" class="btn btn-success rounded-0" value="Add New Student">
+                  
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+<div class="col-12 d-flex justify-content-end">
+  <input id="searchInput" onkeyup="SearchInTBL();" type="text" class="form-control w-25" placeholder="search...">
+</div>
+    </div>
+      <table class="table table-striped table-hover" id="StudentList">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>E-mail</th>
+            <th>Class</th>
+            <th>Created Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+     
+    </div>
+  </div>
+
+    <script src="./JS/bootstrap.min.js"></script>
+    <script src="./JS/main.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+    
+</body>
+</html>

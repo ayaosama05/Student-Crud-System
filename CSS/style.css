@@ -1,0 +1,11 @@
+.table-title{
+  padding: 20px 20px;
+  background-color: #435d7d;
+  color: white;
+}
+
+#StuList{
+  overflow: hidden;
+  font-weight: bold;
+  transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-in-out;
+}
