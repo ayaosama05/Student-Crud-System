@@ -1,6 +1,6 @@
 # Student System - Crud Operations using Javascript 
 
-* Ability to Add / Edit / delete Student data
+* Ability to Add / Edit / delete Student data with data Validation
 * Real time Search
 * Use Local Storage to save data
 * Use API to save inserted data in Google Sheet
